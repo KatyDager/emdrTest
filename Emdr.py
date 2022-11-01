@@ -326,7 +326,8 @@ def register():
         msg.recipients = [email]
         msg.sender = app.config.get("MAIL_USERNAME")
         message="https://emdr-therapy.netlify.app/accountActivated/"
-        message2=message+str(token)
+        new_token=str(token)
+        message2=message+new_token[2:-1]
         message3="To activate your account, visit the following link:"+"\n"+message2+"\n"+"The link will expire in 30 minutes. "
         msg.body=message3  
         
